@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#f07a22</color>
+
+    <color name="intro1">#FFA300</color>
+    <color name="intro2">#FF8500</color>
+    <color name="intro3">#FF6D00</color>
+    <color name="intro4">#FF5317</color>
+
+    <color name="border_bottom_line">#cacaca</color>
+    <color name="cursor">#424242</color>
+    <color name="light_grey">#a7a7a7</color>
+    <color name="light_red">#ff8987</color>
+
+</resources>

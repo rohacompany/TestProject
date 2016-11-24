@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_auth_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="color.test.roha.com.colortestproject.AuthMainActivity"
+    android:orientation="vertical"
+    android:background="@android:color/white"
+
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:padding="10dp"
+        >
+
+        <color.test.roha.com.colortestproject.custom.CountryListSpinner
+            android:id="@+id/dgts__countryCode"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="@dimen/dgts__country_code_margin_bottom"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:gravity="center"
+            android:background="@drawable/border"
+            android:textColor="@android:color/black"
+            android:padding="10dp"
+            />
+
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/border"
+            android:gravity="center"
+            android:layout_marginTop="10dp"
+            android:padding="10dp"
+            android:textCursorDrawable="@drawable/color_cursor"
+            android:inputType="numberDecimal"
+            android:id="@+id/phone_number"
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/auth_phone_1"
+            android:paddingTop="10dp"
+            android:id="@+id/aggrement"
+            android:textSize="9sp"
+            />
+
+    </LinearLayout>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0"
+        android:text="인 증 번 호 전 송"
+        android:background="@drawable/btn_orange_selector"
+        android:textColor="@android:color/white"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:id="@+id/btnSendAuthPinCode"
+        />
+
+</LinearLayout>

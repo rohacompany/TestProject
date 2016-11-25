@@ -32,7 +32,7 @@ public class AuthMainActivity extends BaseActivity {
     // Note: Your consumer key and secret should be obfuscated in your source code before shipping.
     private static final String TWITTER_KEY = "kc1Das6xy7btT2jyqCg5alErx";
     private static final String TWITTER_SECRET = "hpKwtAeKL5ZWBgnnJfIb76ME6Payxo3sxhzASPQNgP9YPTogxG";
-    boolean isTestMode = true;
+    boolean isTestMode = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

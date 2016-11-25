@@ -7,10 +7,28 @@
         내 번호를 아는 사용자는 Google 서비스를 통해 나에게 연락할 수 있습니다.
     </string>
 
-    <string name="re_send">재전송</string>
+
     <string name="auth_country_spinner_format" formatted="false">%1$s(+%2$d)</string>
     <string name="auth_pin_code_hint">전송 받은 인증번호를 입력해주세요</string>
     <string name="auth_pine_code_timeout_format" formatted="false">%02d:%02d 후 재전송</string>
     <string name="auth_pin_code_intruction">입력된 휴대전화로\n인증번호를 전송하였습니다</string>
 
+
+    <!-- SMS Register-->
+    <string name="confirm_auth_code">인 증 번 호 확 인</string>
+    <string name="send_pine_code">인 증 번 호 전 송</string>
+    <string name="re_send">재전송</string>
+    <string name="done">확 인</string>
+
+    <!-- profile -->
+    <string name="profile_enter_name">닉네임 입력</string>
+    <string name="profile_dialog_title">원활한 캣차 사용을 위해\n먼저 사진을 등록 해주세요!</string>
+    <string name="profile_dialog_take_pic">직접 촬영</string>
+    <string name="profile_dialog_open_gallery">갤러리에서 선택</string>
+    <string name="next_time">다음에 하기</string>
+
+    <!-- activity name -->
+    <string name="activity_auth_1_name">전화번호 등록</string>
+    <string name="activity_auth_2_name">인증번호 입력</string>
+    <string name="activity_auth_3_name">프로필 만들기</string>
 </resources>

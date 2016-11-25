@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="wrap_content"
+    >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@drawable/top_border"
+        android:orientation="horizontal"
+        android:padding="10dp"
+        android:layout_weight="1"
+        >
+
+        <ImageButton
+            android:id="@+id/ibtn_common_back"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:background="@null"
+            android:scaleType="fitCenter"
+            android:src="@drawable/ic_back" />
+
+
+        <TextView
+            android:id="@+id/tv_common_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="전화번호 등록"
+            android:textColor="@android:color/black"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+    </RelativeLayout>
+
+    <ImageView
+        android:id="@+id/iv_common_top_step"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:src="@drawable/img_register_step1"
+        android:layout_weight="0"
+        />
+
+</LinearLayout>

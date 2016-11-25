@@ -5,6 +5,7 @@ package color.test.roha.com.colortestproject;
  */
 
 public class URLManager {
-    private String _MAIN_JSON_QUERY_HOST =
+    public static String _MAIN_JSON_QUERY_HOST =
             "http://command.roha.co.kr/json/query.php";
+    public static String _VERSION = "3.0";
 }

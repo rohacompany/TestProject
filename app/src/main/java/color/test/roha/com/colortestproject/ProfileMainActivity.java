@@ -8,10 +8,15 @@ import android.provider.SyncStateContract;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
+
+import com.androidquery.AQuery;
 
 import java.io.File;
 
-public class ProfileMainActivity extends AppCompatActivity {
+import static android.R.attr.start;
+
+public class ProfileMainActivity extends BaseActivity {
     public static final int CROP_RESULT = 1000;
     public static final String CROP_IMAGE_PATH = "";
     public static final int PICK_FROM_CAMERA = 2000;
@@ -22,10 +27,34 @@ public class ProfileMainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile_main);
 
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        aq = new AQuery(this);
 
 //        runCameraWithCropCircle();
 
+        setupTop();
+
+        aq.id(R.id.ivProfileMain).clicked(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openProfileDialog();
+            }
+        });
+
+        aq.id(R.id.ivProfileMain).image(R.drawable.img_profile_sample);
+
+        openProfileDialog();
+    }
+
+    private void openProfileDialog(){
+        Intent intent = new Intent(ProfileMainActivity.this , ProfileDialogActivity.class);
+        startActivity(intent);
+    }
+
+    @Override
+    public void setupTop() {
+        super.setupTop();
+        setTitle(R.string.activity_auth_3_name);
+        setStep(3);
     }
 
     @Override

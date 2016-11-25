@@ -7,8 +7,9 @@
     tools:context="color.test.roha.com.colortestproject.AuthMainActivity"
     android:orientation="vertical"
     android:background="@android:color/white"
-
     >
+
+    <include layout="@layout/view_common_top" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -59,7 +60,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="0"
-        android:text="인 증 번 호 전 송"
+        android:text="@string/send_pine_code"
         android:background="@drawable/btn_orange_selector"
         android:textColor="@android:color/white"
         android:textSize="16sp"

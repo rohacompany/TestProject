@@ -25,14 +25,14 @@ import color.test.roha.com.colortestproject.custom.CountryListSpinner;
 
 import static color.test.roha.com.colortestproject.MainActivity._PERMISSION_REQUEST_CODE;
 
-public class AuthMainActivity extends AppCompatActivity {
+public class AuthMainActivity extends BaseActivity {
     TextView tvLinkify;
-    AQuery aq;
     CountryListSpinner countryListSpinner;
 
     // Note: Your consumer key and secret should be obfuscated in your source code before shipping.
     private static final String TWITTER_KEY = "kc1Das6xy7btT2jyqCg5alErx";
     private static final String TWITTER_SECRET = "hpKwtAeKL5ZWBgnnJfIb76ME6Payxo3sxhzASPQNgP9YPTogxG";
+    boolean isTestMode = true;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,6 +44,16 @@ public class AuthMainActivity extends AppCompatActivity {
         countryListSpinner = (CountryListSpinner)findViewById(R.id.dgts__countryCode);
 
         checkPermission();
+
+        setupTop();
+    }
+
+    @Override
+    public void setupTop() {
+        super.setupTop();
+
+        setTitle(R.string.activity_auth_1_name);
+        aq.id(R.id.ibtn_common_back).gone();
     }
 
     private void setLinkfy(){
@@ -107,10 +117,15 @@ public class AuthMainActivity extends AppCompatActivity {
 
                 Log.d("KTH" , country_code + "," + phone_number);
 
-                Intent intent = new Intent(AuthMainActivity.this , AuthPinConfirmActivity.class);
-                intent.putExtra("country_code" , country_code);
-                intent.putExtra("phone_number" , phone_number);
-                startActivity(intent);
+                if(isTestMode){
+                    Intent intent = new Intent(AuthMainActivity.this, ProfileMainActivity.class);
+                    startActivity(intent);
+                }else {
+                    Intent intent = new Intent(AuthMainActivity.this, AuthPinConfirmActivity.class);
+                    intent.putExtra("country_code", country_code);
+                    intent.putExtra("phone_number", phone_number);
+                    startActivity(intent);
+                }
             }
         });
 
@@ -122,11 +137,19 @@ public class AuthMainActivity extends AppCompatActivity {
         TelephonyManager mTelephonyMgr;
         mTelephonyMgr = (TelephonyManager)
                 getSystemService(Context.TELEPHONY_SERVICE);
-        return mTelephonyMgr.getLine1Number();
+        String phoneNumber = mTelephonyMgr.getLine1Number();
+        if(phoneNumber.startsWith("82")){
+            phoneNumber.replace("82","0");
+        }else if(phoneNumber.startsWith("+82")){
+            phoneNumber.replace("+82","0");
+        }
+        return phoneNumber;
     }
 
     private String getMy10DigitPhoneNumber(String phoneNumber){
         String s = phoneNumber;
         return s.substring(2);
     }
+
+
 }
